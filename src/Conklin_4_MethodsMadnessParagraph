@@ -1,5 +1,5 @@
 My program uses several different methods to draw geometric shapes and patterns.
 All of the methods utilize geometry to calculate point positions, which are then fed into JavaFX's methods.
-My methods can draw A trinity symbol, a regular triangular, a rectangular polygons, and a circle.
+My methods can draw A trinity symbol, a regular triangular, a square, and a circle.
 I also made a fractal program at home that draws regular polygons in fractal patterns.
 I plan to use these methods to create interesting geometric pictures and mesmerizing fractal patterns
