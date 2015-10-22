@@ -9,6 +9,11 @@ package conklin_4_javafxintro;
  *
  * @author jconklin2391
  */
+
+/**
+ *
+ * @author jconklin2391
+ */
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -54,8 +59,8 @@ class RegularPolygon {
 
 public class Conklin_4_methodsmadness extends Application {
 
-    int screenwidth = 300;
-    int screenheight = 300;
+    int screenwidth = 500;
+    int screenheight = 500;
 
     public static void main(String[] args) {
         launch(args);
@@ -67,17 +72,56 @@ public class Conklin_4_methodsmadness extends Application {
         Group root = new Group();
         Canvas canvas = new Canvas(screenwidth, screenheight);
         GraphicsContext gc = canvas.getGraphicsContext2D();
-        RegularPolygon square = new RegularPolygon(4, new double[]{screenwidth / 2, screenheight / 2}, 50);
-        RegularPolygon hexagon = new RegularPolygon(6, new double[]{screenwidth / 8, screenheight / 8}, 30);
-        RegularPolygon triangle = new RegularPolygon(3, new double[]{screenwidth / 3, screenheight / 8}, 30);
-        RegularPolygon pentagon = new RegularPolygon(5, new double[]{screenwidth - screenwidth / 8, screenheight / 8}, 30);
-        RegularPolygon septagon = new RegularPolygon(7, new double[]{screenwidth /4, screenheight - screenheight / 8}, 30);
-        drawRegularPolygonFractal(gc, square, Color.BLACK, 1, 4);
-        drawRegularPolygon(gc, hexagon, Color.ORANGE, 5);
-        drawRegularPolygon(gc, triangle, Color.DODGERBLUE, 5);
-        drawCircle(gc, Color.TOMATO, 10, new double[]{190, screenheight / 8}, 60);
-        drawPolygonInscribed(gc, pentagon, Color.DARKSLATEGRAY, 2);
-        drawPolygonStar(gc, septagon, Color.BLACK, 1);
+//        RegularPolygon square = new RegularPolygon(4, new double[]{screenwidth / 2, screenheight / 2}, 60);
+//        RegularPolygon hexagon = new RegularPolygon(6, new double[]{screenwidth / 8, screenheight / 8}, 30);
+//        RegularPolygon triangle = new RegularPolygon(3, new double[]{screenwidth / 8, screenheight / 8}, 30);
+//        RegularPolygon triangle2 = new RegularPolygon(3, new double[]{screenwidth / 4, screenheight * 7 / 8}, 13);
+//        RegularPolygon pentagon = new RegularPolygon(5, new double[]{screenwidth / 1.5, screenheight / 8}, 30);
+//        RegularPolygon septagon = new RegularPolygon(7, new double[]{screenwidth / 8, screenheight * 2 / 3}, 30);
+//        RegularPolygon octagon = new RegularPolygon(8, new double[]{screenwidth / 4, screenheight * 7 / 8}, 13);
+//        RegularPolygon nonagon = new RegularPolygon(9, new double[]{screenwidth / 2, screenheight / 2}, 50);
+//        int num = screenwidth / 10;
+//        RegularPolygon[] tesselation = new RegularPolygon[num];
+//        tesselation[0] = new RegularPolygon(6, new double[]{0, num}, num);
+//        drawRegularPolygon(gc, tesselation[0], Color.RED, 5);
+//        for(int i = 1; i < num; i++){
+//            tesselation[i] = new RegularPolygon(6, new double[]{tesselation[(i-1)].centerpoint[0] + (tesselation[(i-1)].radius * Math.cos(Math.toRadians(tesselation[i].interiorAngle))), tesselation[(i-1)].centerpoint[1] + (tesselation[(i-1)].radius * Math.cos(Math.toRadians(tesselation[i].interiorAngle)))}, num);
+//            drawRegularPolygon(gc, tesselation[i], Color.RED, 5);
+//        }
+        RegularPolygon triangle = new RegularPolygon(3, new double[]{screenwidth / 10, screenheight / 10}, 25);
+        RegularPolygon square = new RegularPolygon(4, new double[]{3 * screenwidth / 10, screenheight / 10}, 25);
+        RegularPolygon pentagon = new RegularPolygon(5, new double[]{screenwidth / 2, screenheight / 10}, 25);
+        RegularPolygon hexagon = new RegularPolygon(6, new double[]{7 *screenwidth / 10, screenheight / 10}, 25);
+        RegularPolygon septagon = new RegularPolygon(7, new double[]{screenwidth / 10, screenheight / 4}, 25);
+        RegularPolygon octagon = new RegularPolygon(8, new double[]{3 * screenwidth / 10, screenheight / 4}, 25);
+        RegularPolygon nonagon = new RegularPolygon(9, new double[]{screenwidth / 2, screenheight / 4}, 25);
+        RegularPolygon decagon = new RegularPolygon(10, new double[]{7 * screenwidth / 10, screenheight / 4}, 25);
+        RegularPolygon squareF = new RegularPolygon(4, new double[]{screenwidth / 2, 4 * screenheight / 5}, 50);
+        RegularPolygon septagonS = new RegularPolygon(7, new double[]{screenwidth / 10, screenheight / 2}, 50);
+        drawRegularPolygonFractal(gc, squareF, Color.BLACK, 1, 4);
+      drawRegularPolygon(gc, triangle, Color.RED, 5);
+      drawRegularPolygon(gc, square, Color.GOLDENROD, 5);
+      drawRegularPolygon(gc, pentagon, Color.BLUE, 5);
+      drawRegularPolygon(gc, hexagon, Color.DARKSLATEBLUE, 5);
+      drawRegularPolygon(gc, septagon, Color.MAGENTA, 5);
+      drawRegularPolygon(gc, octagon, Color.OLIVEDRAB, 5);
+      drawRegularPolygon(gc, nonagon, Color.TAN, 5);
+      drawRegularPolygon(gc, decagon, Color.MAROON, 5);
+      drawPolygonStar(gc, septagonS, Color.GREEN, 2);
+//     drawRegularPolygon(gc, square, Color.BLACK, 1);
+//        drawRegularPolygon(gc, pentagon, Color.BLACK, 1);
+        //drawRegularPolygon(gc, hexagon, Color.BLACK, 1);
+        //drawRegularPolygon(gc, septagon, Color.BLACK, 1);
+        //drawRegularPolygon(gc, octagon, Color.BLACK, 1);
+        //drawVenn(gc, triangle, Color.TOMATO, 1, 100);
+        //drawVenn(gc, octagon, Color.TOMATO, 1, 50);
+        //drawVenn(gc, pentagon, Color.TOMATO, 1, 100);
+        //drawVenn(gc, nonagon, Color.BLACK, 1, 100);
+        //drawRegularPolygon(gc, triangle, Color.DODGERBLUE, 5);
+        //drawCircle(gc, Color.TOMATO, 10, new double[]{190, screenheight / 8}, 30);
+      //  drawPolygonStar(gc, septagon, Color.GREEN, 1);
+     // drawPolygonInscribed(gc, pentagon, Color.BLUE, 2);
+        //drawPolygonStar(gc, septagon, Color.GREEN, 1);
         //drawRegularPolygon(gc, square, Color.BLACK, 10);
         //drawRegularPolygonWithLines(gc, Color.BLACK, 1, new double[]{screenwidth / 2 , screenheight / 2}, screenwidth / 2, 8);
         root.getChildren().add(canvas);
@@ -90,25 +134,28 @@ public class Conklin_4_methodsmadness extends Application {
         gc.setLineWidth(lineWidth);
         gc.strokePolygon(polygon.coords_x, polygon.coords_y, polygon.numberOfSides);
     }
-    
+    private void drawVenn(GraphicsContext gc, RegularPolygon polygon, Color color, int lineWidth, int diameter) {
+        gc.setStroke(color);
+        gc.setLineWidth(lineWidth);
+        for(int i = 0; i < polygon.numberOfSides; i++){
+            drawCircle(gc, color, lineWidth, new double[]{polygon.coords_x[i], polygon.coords_y[i]}, diameter);
+        }
+    }
     private void drawPolygonInscribed(GraphicsContext gc, RegularPolygon polygon, Color color, int lineWidth) {
             drawRegularPolygon(gc, polygon, color, lineWidth);
             drawCircle(gc, color, lineWidth, polygon.centerpoint, polygon.radius * 2);
     }
-private void drawPolygonCrissCross(GraphicsContext gc, RegularPolygon polygon, Color color, int lineWidth) {
-            drawRegularPolygon(gc, polygon, color, lineWidth);
-            for(int i = 0; i < polygon.numberOfSides; i++){
-                for(int a = 0; a < polygon.numberOfSides; a++){
-                gc.strokeLine(polygon.coords_x[i], polygon.coords_y[i], polygon.coords_x[a], polygon.coords_y[a]);
-            }
-            }
-            
-    }
+
 private void drawPolygonStar(GraphicsContext gc, RegularPolygon polygon, Color color, int lineWidth) {
-            drawRegularPolygon(gc, polygon, color, lineWidth);
+            gc.setStroke(color);
+        gc.setLineWidth(lineWidth);
             for(int i = 0; i < polygon.numberOfSides; i++){
                 for(int a = 0; a < polygon.numberOfSides; a++){
-                                            gc.strokeLine(polygon.coords_x[i], polygon.coords_y[i], polygon.coords_x[a], polygon.coords_y[a]);
+                    if(i - a > 1 && i - a != polygon.numberOfSides - 1){
+                        System.out.println("[" + i + "] " + "[" + a + "]");
+                        gc.strokeLine(polygon.coords_x[i], polygon.coords_y[i], polygon.coords_x[a], polygon.coords_y[a]);
+                    }
+                      
                     
                 
             }
